@@ -7,7 +7,6 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.util.Random
 
-
 class ChatViewModel : ViewModel() {
     private val randomMessages = listOf(
         "안녕! 나 유쾌한 거인이야",
@@ -36,7 +35,6 @@ class ChatViewModel : ViewModel() {
         val newMessages = messages + Message(text = text, isSentByMe = true)
         onMessagesUpdated(newMessages)
     }
-
 
     internal fun startReceivingMessages(onMessageReceived: (Message) -> Unit) =
         viewModelScope.launch {
