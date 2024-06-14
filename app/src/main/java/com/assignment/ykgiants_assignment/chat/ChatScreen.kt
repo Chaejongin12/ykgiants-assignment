@@ -2,6 +2,7 @@ package com.assignment.ykgiants_assignment.chat
 
 import android.os.Build
 import androidx.annotation.RequiresApi
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -18,6 +19,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -47,35 +49,33 @@ fun ChatScreen(
         }
     }
 
-    Surface(
+    Column(
         modifier = modifier
             .fillMaxSize()
             .clickable {
                 keyboardController?.hide()
-            },
+            }
+            .imePadding(),
     ) {
-        Column(
-            modifier = modifier.fillMaxSize(),
-        ) {
-            ChatTopBar()
+        ChatTopBar()
 
-            MessageScreen(
-                messages = messages,
-                modifier = modifier.weight(1f),
-            )
+        MessageScreen(
+            messages = messages,
+            modifier = modifier
+                .weight(1f)
+        )
 
 
-            ChatTextField(
-                placeholder = "메시지를 입력하세요",
-                onButtonClick = { text ->
-                    chatViewModel.addMessage(messages, text) { newMessages ->
-                        messages = newMessages
-                    }
-                },
-                modifier = modifier
-                    .fillMaxWidth()
-            )
-        }
+        ChatTextField(
+            placeholder = "메시지를 입력하세요",
+            onButtonClick = { text ->
+                chatViewModel.addMessage(messages, text) { newMessages ->
+                    messages = newMessages
+                }
+            },
+            modifier = modifier
+                .fillMaxWidth()
+        )
     }
 }
 
