@@ -52,7 +52,7 @@ fun ChatTextField(
         modifier = modifier
             .fillMaxWidth()
             .border(
-                width = 2.dp,
+                width = 4.dp,
                 color = Color.Cyan,
             )
             .background(color = Color.White, shape = RoundedCornerShape(10.dp)),
