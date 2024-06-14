@@ -21,22 +21,3 @@ fun MenuButtonIcon() {
         contentDescription = "Menu Button"
     )
 }
-
-@Composable
-fun SendButtonIcon() {
-    Image(
-        painter = painterResource(id = R.drawable.ic_send_button),
-        contentDescription = "Send Button"
-    )
-}
-
-@Composable
-fun MyChatBubbleTail(
-    modifier: Modifier = Modifier,
-) {
-    Image(
-        modifier = modifier,
-        painter = painterResource(id = R.drawable.bg_chat_bubble_tail),
-        contentDescription = "My Chat Bubble Tail"
-    )
-}
