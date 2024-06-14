@@ -24,7 +24,7 @@ import com.assignment.ykgiants_assignment.chat.viewModel.ChatViewModel
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
-fun ChatScreen(
+internal fun ChatScreen(
     modifier: Modifier = Modifier,
     chatViewModel: ChatViewModel = viewModel(),
 ) {
@@ -72,6 +72,6 @@ fun ChatScreen(
 @RequiresApi(Build.VERSION_CODES.O)
 @Preview
 @Composable
-fun ChatScreenPreview() {
+internal fun ChatScreenPreview() {
     ChatScreen()
 }

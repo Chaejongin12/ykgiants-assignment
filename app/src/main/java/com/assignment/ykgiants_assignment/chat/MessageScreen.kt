@@ -17,7 +17,7 @@ import com.assignment.ykgiants_assignment.model.Message
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
-fun MessageScreen(
+internal fun MessageScreen(
     messages: List<Message>,
     modifier: Modifier = Modifier,
 ) {
@@ -41,7 +41,7 @@ fun MessageScreen(
 @RequiresApi(Build.VERSION_CODES.O)
 @Preview
 @Composable
-fun MessageScreenPreview() {
+internal fun MessageScreenPreview() {
     MessageScreen(
         messages = listOf(
             Message("Hello", isSentByMe = true),

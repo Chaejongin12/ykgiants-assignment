@@ -25,7 +25,7 @@ import java.time.LocalTime
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
-fun ChatBubble(
+internal fun ChatBubble(
     message: Message,
     modifier: Modifier = Modifier,
 ) {
@@ -68,7 +68,7 @@ fun ChatBubble(
 @RequiresApi(Build.VERSION_CODES.O)
 @Preview
 @Composable
-fun ChatBubblePreview() {
+internal fun ChatBubblePreview() {
     Column {
         ChatBubble(
             message = Message("안녕하세요? 저는 채종인입니다.", isSentByMe = true)
