@@ -3,6 +3,7 @@ package com.assignment.ykgiants_assignment.chat
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
@@ -24,8 +25,9 @@ internal fun MessageScreen(
     val listState = rememberLazyListState()
 
     LazyColumn(
-        modifier = modifier.
-            background(color = Color.White),
+        modifier = modifier
+            .systemBarsPadding()
+            .background(color = Color.White),
         state = listState
     ) {
         items(messages) { message ->
